@@ -12,7 +12,7 @@
 <form method="POST" action="creationquizz">
 
 <input type="radio" name="sujet" value="maths">Maths<br>
-<input type="radio" name="sujet" value="francais">francais<br>
+<input type="radio" name="sujet" value="francais">français<br>
 <input type="radio" name="sujet" value="philo">philo<br><hr/><br>
 
 
