@@ -263,7 +263,7 @@ public class Admin extends User {
 			if(statut1==true) {
 				statut2=1;
 			}
-			
+			//commentaire
 			
 			st.setString(1, login1);
 			st.setString(2, password1);
