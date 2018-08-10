@@ -171,6 +171,37 @@ public class Admin extends User {
 		return statut;
 	}
 	
+	public static boolean desactiveUser(User user) {
+		boolean statut = true;
+		Connection connection = null;
+		// statelent execute la requete
+		PreparedStatement st = null;
+		// recupere les resulat de la requete
+		ResultSet res = null;
+		
+		try {
+
+			connection = util.Utilities.openConnection();
+			System.out.println("Connection etablie");
+
+			// le statement execute la requete
+			String login = user.getLogin();
+			String sql = "UPDATE USER SET statut = false where login = '"+login+"'";
+			System.out.println(user.getLogin());
+			//st.setString(1, user.getLogin());
+			st = connection.prepareStatement(sql);
+			
+			st.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Problème lors de la connexion à la BD");
+			e.printStackTrace();
+			return false;
+		} finally {
+			util.Utilities.closeConnexions(connection, st, res);
+		}
+		return statut;
+	}
+	
 	public static boolean deleteUser(User user) {
 		boolean statut = true;
 		Connection connection = null;
@@ -203,7 +234,59 @@ public class Admin extends User {
 	}
 
 	
-	
+	public static boolean modifUser(int id, String login, String password, String nom, String prenom, String societe, String telephone, boolean statut) {
+		User usr = new User (id ,login, password,nom,prenom, societe,telephone,null,statut);
+		Connection connection = null;
+		// statelent execute la requete
+		PreparedStatement st = null;
+		// recupere les resulat de la requete
+		ResultSet res = null;
+
+		try {
+
+			connection = util.Utilities.openConnection();
+			System.out.println("Connection etablie");
+
+			// le statement execute la requete
+			String sql = "UPDATE USER (LOGIN, PASSWORD, NOM, PRENOM, SOCIETE, TELEPHONE, STATUT) VALUES (? , ?,?,?,?,?,? )";
+			st = connection.prepareStatement(sql);
+			// le res recupere les valeur de la requete
+
+			String login1  = usr.getLogin();
+			String password1 = usr.getPass();
+			String nom1 = usr.getNom();
+			String prenom1= usr.getPrenom();
+			String societe1= usr.getSociete();
+			String telephone1= usr.getTelephone();
+			Boolean statut1 = usr.getStatut();
+			int statut2=0;
+			if(statut1==true) {
+				statut2=1;
+			}
+			
+			
+			st.setString(1, login1);
+			st.setString(2, password1);
+			st.setString(3, nom1);
+			st.setString(4, prenom1);
+			st.setString(5, societe1);
+			st.setString(6, telephone1);
+			st.setInt(7, statut2);
+			
+		
+
+			// execute quesry and load result
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("Problème lors de la connexion à la BD");
+			e.printStackTrace();
+			return false;
+		} finally {
+			util.Utilities.closeConnexions(connection, st, res);
+		}
+		return true;
+	}
 	
 	
 	
