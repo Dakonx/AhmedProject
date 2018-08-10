@@ -248,7 +248,7 @@ public class Admin extends User {
 			System.out.println("Connection etablie");
 
 			// le statement execute la requete
-			String sql = "UPDATE USER (LOGIN, PASSWORD, NOM, PRENOM, SOCIETE, TELEPHONE, STATUT) VALUES (? , ?,?,?,?,?,? )";
+			String sql = "UPDATE USER SET LOGIN, PASSWORD = ?, NOM = ?, PRENOM = ?, SOCIETE = ? where id_user = ?";
 			st = connection.prepareStatement(sql);
 			// le res recupere les valeur de la requete
 
@@ -259,11 +259,12 @@ public class Admin extends User {
 			String societe1= usr.getSociete();
 			String telephone1= usr.getTelephone();
 			Boolean statut1 = usr.getStatut();
+			int id1 = usr.getId();
 			int statut2=0;
 			if(statut1==true) {
 				statut2=1;
 			}
-			//c
+			
 			
 			st.setString(1, login1);
 			st.setString(2, password1);
@@ -272,6 +273,7 @@ public class Admin extends User {
 			st.setString(5, societe1);
 			st.setString(6, telephone1);
 			st.setInt(7, statut2);
+			st.setInt(8, id1);
 			
 		
 
