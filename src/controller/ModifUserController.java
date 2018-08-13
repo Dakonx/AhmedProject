@@ -33,12 +33,13 @@ public class ModifUserController extends HttpServlet {
 		String modStatut = request.getParameter("modStatut");
 		boolean statut = false;
 		String erreur="";
+		System.out.println(modStatut);
 		if(modStatut.equals("delete")) {
 			User user=new User();
 			user.setId(idUser);
 			Admin.deleteUser(user);
 			request.getRequestDispatcher("WEB-INF/gestion.jsp").forward(request, response);
-		}else if(modStatut.equals("activer")) {
+		}else if(modStatut.equals("actif")) {
 			statut=true;
 			
 			if (modLogin.length() == 0 || modPassword.length() == 0 || modNom.length() == 0 || modPrenom.length() == 0 || modSociete.length() == 0 || modTelephone.length() == 0) {
