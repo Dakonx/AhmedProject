@@ -216,8 +216,8 @@ public class Admin extends User {
 			System.out.println("Connection etablie");
 
 			// le statement execute la requete
-			String login = user.getLogin();
-			String sql = "DELETE FROM USER where login = '"+login+"'";
+			int id = user.getId();
+			String sql = "DELETE FROM USER where login = '"+id+"'";
 			System.out.println(user.getLogin());
 			//st.setString(1, user.getLogin());
 			st = connection.prepareStatement(sql);
@@ -248,7 +248,7 @@ public class Admin extends User {
 			System.out.println("Connection etablie");
 
 			// le statement execute la requete
-			String sql = "UPDATE USER SET LOGIN, PASSWORD = ?, NOM = ?, PRENOM = ?, SOCIETE = ? where id_user = ?";
+			String sql = "UPDATE USER SET LOGIN = ?, PASSWORD = ?, NOM = ?, PRENOM = ?, SOCIETE = ?, TELEPHONE = ?, STATUT= ? where id = ?";
 			st = connection.prepareStatement(sql);
 			// le res recupere les valeur de la requete
 

@@ -11,34 +11,28 @@
 </head>
 <body>
 
-<td><select name="user" size="1"> 
-				<% 
- 					List<User> users = UserBDD.rechercherToutLesUsers();
- 					for (int j = 0; j < users.size(); j++) {
- 						User us = users.get(j);
- 				%> 
- 			 	<option value="<%=us.getLogin()%>"><%=us.getLogin()%></OPTION>
- 				<% 
- 					}
- 				%> 
-</select></td>
-<% User user=UserBDD.getUserByLogin(request.getParameter("user"));
-   int iduser=user.getId();
+
+<% 
+	int idUser=Integer.parseInt(String.valueOf(request.getSession().getAttribute("idUserModif")));
+	System.out.print(idUser);
+	User user=UserBDD.getUserByID(idUser);
+   	user.getId();
 
 
 %>
 <form method="post" action="modifuser">
 
-<input type="hidden" name="iduser" value="<%=iduser%>" />
+<input type="hidden" name="iduser" value="<%=idUser%>" />
 
-<input type="email" placeholder="email" name="modLogin" value="<%= user.getLogin() %>" /><br><br>
-<input type="text" placeholder="password" name="modPassword" value="<%= user.getPass() %>"/><br><br>
-<input type="text" placeholder="nom" name="modNom" value="<%= user.getNom() %>"/><br><br>
-<input type="text" placeholder="prenom" name="modPrenom" value="<%= user.getPrenom() %>"/><br><br>
-<input type="text" placeholder="societe" name="modSociete" value="<%= user.getSociete() %>"/><br><br>
-<input type="text" placeholder="telephone" name="modTelephone" value="<%= user.getTelephone() %>" /><br><br>
+<input type="email" placeholder="email" name="modLogin" value="<%= user.getLogin() %>" />  Login<br><br>
+<input type="text" placeholder="password" name="modPassword" value="<%= user.getPass() %>"/>  Password<br><br>
+<input type="text" placeholder="nom" name="modNom" value="<%= user.getNom() %>"/>  Nom<br><br>
+<input type="text" placeholder="prenom" name="modPrenom" value="<%= user.getPrenom() %>"/>  Prenom<br><br>
+<input type="text" placeholder="societe" name="modSociete" value="<%= user.getSociete() %>"/>  Societe<br><br>
+<input type="text" placeholder="telephone" name="modTelephone" value="<%= user.getTelephone() %>" />  Telephone<br><br>
 <input type="radio" value="actif" name="modStatut" <%if(user.getStatut()){%>checked<%}%>/> actif <br><br>
 <input type="radio" value="pasactif" name="modStatut" <%if(!user.getStatut()){%>checked<%}%>/> pas actif <br><br>
+<input type="radio" value="delete" name="modStatut" /> Delete <br><br>
 
 <input type="submit"/>
 <input type="reset"/>

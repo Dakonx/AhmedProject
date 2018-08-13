@@ -93,7 +93,7 @@
     <servlet-name>ChoisirQuizzController</servlet-name>
     <url-pattern>/choisirquizz</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>ModifUserController</servlet-name>
     <servlet-class>controller.ModifUserController</servlet-class>
   </servlet>
@@ -101,4 +101,13 @@
     <servlet-name>ModifUserController</servlet-name>
     <url-pattern>/modifuser</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>UsersController</servlet-name>
+    <servlet-class>controller.UsersController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UsersController</servlet-name>
+    <url-pattern>/users</url-pattern>
+  </servlet-mapping>
+ 
 </web-app>
