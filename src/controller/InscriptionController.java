@@ -33,7 +33,7 @@ public class InscriptionController extends HttpServlet {
 		System.out.println(insAdmin);
 		String erreur = "";
 
-		if (insLogin.length() == 0 || insPassword.length() == 0 || insAdmin.length() == 0 || insNom.length() == 0 || insPrenom.length() == 0 || insSociete.length() == 0 || insTelephone.length() == 0) {
+		if (insLogin.equals(null) || insPassword.equals(null) || insNom.equals(null) || insPrenom.equals(null) || insSociete.equals(null) || insTelephone.equals(null)) {
 			erreur = "un des champs est vide";
 			System.out.println(erreur);
 			request.getRequestDispatcher("WEB-INF/inscription.jsp").forward(request, response);

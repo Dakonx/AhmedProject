@@ -57,7 +57,7 @@
 					if (b == quizzs.size()) {
 			%>
 
-			<h2>Vous avez effectué tout les quizzs de cette matière</h2>
+			<h2>Vous avez effectué tout les quizz de cette matière</h2>
 			<a href="/ahmedProject/choisirsujet">retour</a>
 			<%
 				}

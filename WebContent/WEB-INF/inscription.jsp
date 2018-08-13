@@ -9,12 +9,12 @@
 <body background="https://i2.wp.com/www.odilesacoche.be/wp-content/uploads/2016/04/WALLPAPER-UNICORN-DESKTOP-PC.jpg">
 <form method="post" action="inscription">
 
-<input type="email" placeholder="email" name="insLogin" /><br><br>
-<input type="password" placeholder="password" name="insPassword" /><br><br>
-<input type="text" placeholder="nom" name="insNom" /><br><br>
-<input type="text" placeholder="prenom" name="insPrenom" /><br><br>
-<input type="text" placeholder="societe" name="insSociete" /><br><br>
-<input type="text" placeholder="telephone" name="insTelephone" /><br><br>
+<input type="email" placeholder="email" name="insLogin" required/><br><br>
+<input type="password" placeholder="password" name="insPassword" required /><br><br>
+<input type="text" placeholder="nom" name="insNom" required/><br><br>
+<input type="text" placeholder="prenom" name="insPrenom" required/><br><br>
+<input type="text" placeholder="societe" name="insSociete" required/><br><br>
+<input type="text" placeholder="telephone" name="insTelephone" required/><br><br>
 <input type="checkbox" value="admin" name="insAdmin"/> cochez si admin <br><br>
 <input type="submit"/>
 <input type="reset"/>
