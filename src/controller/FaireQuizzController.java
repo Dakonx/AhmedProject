@@ -38,7 +38,7 @@ public class FaireQuizzController extends HttpServlet {
 		
 		List<Question> quests = QuestionBDD.getQuestionByIDQuizz(Integer.parseInt((String) request.getSession().getAttribute("idQuizzSelect")));
 
-		int score = 0;
+		int score = 0;//
 
 		for (int i = 0; i < quests.size(); i++) {
 			List<Reponse> reponses = ReponseBDD.getReponseByIDQuestion(quests.get(i).getId());
