@@ -22,5 +22,7 @@
 			%>
 
 			<input type="submit" />
+			</form>
+			</div>
 </body>
 </html>
