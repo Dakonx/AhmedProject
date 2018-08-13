@@ -14,7 +14,10 @@
 		<form method="POST" action="choisirquizz">
 			<%
 				List<Quizz> quizzs = QuizzBDD.getQuizzBySujet((String) request.getSession().getAttribute("sujet"));
-				for (int i = 0; i < quizzs.size(); i++) {
+				
+			for (int i = 0; i < quizzs.size(); i++) {
+					
+					
 			%>
 			<input type="radio" name="quizz" value="<%=quizzs.get(i).getId() %>"><%= i+1%><br>
 			<%
