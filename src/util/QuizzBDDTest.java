@@ -17,5 +17,12 @@ class QuizzBDDTest {
 		List<Quizz>listq= QuizzBDD.getQuizzBySujet("maths");
 		if (listq==null) fail("Not yet implemented");
 	}
+	
+	void testGetAllQuizzt() {
+		
+		
+		List<Quizz>listq= QuizzBDD.getAllQuizz();
+		if (listq==null) fail("Not yet implemented");
+	}
 
 }
