@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Admin extends User {
-
+//LOL JE SUIS UN TEST!!
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -217,8 +217,9 @@ public class Admin extends User {
 
 			// le statement execute la requete
 			int id = user.getId();
-			String sql = "DELETE FROM USER where login = '"+id+"'";
-			System.out.println(user.getLogin());
+			System.out.println(id);
+			String sql = "DELETE FROM USER where id = '"+id+"'";
+	
 			//st.setString(1, user.getLogin());
 			st = connection.prepareStatement(sql);
 			

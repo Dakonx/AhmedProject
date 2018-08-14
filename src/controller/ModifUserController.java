@@ -37,6 +37,7 @@ public class ModifUserController extends HttpServlet {
 		if(modStatut.equals("delete")) {
 			User user=new User();
 			user.setId(idUser);
+			System.out.println(idUser);
 			Admin.deleteUser(user);
 			request.getRequestDispatcher("WEB-INF/gestion.jsp").forward(request, response);
 		}else if(modStatut.equals("actif")) {

@@ -34,7 +34,13 @@ public class Quizz {
 	public void setQuestion(List<Question> question) {
 		this.question = question;
 	}
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if (this.getId()==((Quizz)obj).getId()) return true;
+		else return false;
 	
+	}
 	
 
 }
