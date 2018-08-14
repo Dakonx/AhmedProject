@@ -12,6 +12,8 @@
 <a href ="/ahmedProject/gestionparcours" > Modifier un parcour </a>  <br>
 <a href ="/ahmedProject/gestionstatut" > Activer un compte </a>  <br>
 <a href ="/ahmedProject/creationquizz" > Créer un quizz </a>  <br>
+<a href ="/ahmedProject/users" > Modifier un User </a>  <br>
+
 
 
 </body>

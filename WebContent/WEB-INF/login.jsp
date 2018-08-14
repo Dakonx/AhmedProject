@@ -27,8 +27,8 @@
 			<label>Login: <input type="email" name="login" placeholder="votre E-mail" scope ="session"  /></label><br> <br>
 			<label>Password <input type="password" name="password" placeholder="votre mot de passe" scope ="session" /></label><br> <br>
 			
-			<br><input type="radio" name="admin" value="admin" checked/> Vous êtes un Admin
-			<input type="radio" name="admin" value="user"  />Vous êtes un Péon <br>
+			<br><input type="radio" name="admin" value="admin" /> Vous êtes un Admin
+			<input type="radio" name="admin" value="user" checked />Vous êtes un Péon <br>
 			
 			<br>
 			<input type="submit" /> <input type="reset" /><br> <br>
