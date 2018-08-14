@@ -29,7 +29,7 @@ public class QuizzBDD {
 		try {
 
 			// le statement execute la requete
-			String sql = "select * from ";
+			String sql = "select * from QUIZZ";
 			st = connection.prepareStatement(sql);
 			// le statement execute la requete
 			// le res recupere les valeur de la requete
@@ -150,5 +150,44 @@ public class QuizzBDD {
 		}
 
 		return null;
+	}
+	
+public static boolean modifQuizz(int id,String sujet) {
+		
+		Connection connection = null;
+		// statelent execute la requete
+		PreparedStatement st = null;
+		// recupere les resulat de la requete
+		ResultSet res = null;
+
+		try {
+
+			connection = util.Utilities.openConnection();
+			System.out.println("Connection etablie");
+
+			// le statement execute la requete
+			String sql = "UPDATE QUIZZ SET SUJET = ? where id_QUIZZ = ?";
+			st = connection.prepareStatement(sql);
+			// le res recupere les valeur de la requete
+
+			
+						
+			st.setString(1, sujet);
+			st.setInt(2, id);
+
+			
+		
+
+			// execute quesry and load result
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("Problème lors de la connexion à la BD");
+			e.printStackTrace();
+			return false;
+		} finally {
+			util.Utilities.closeConnexions(connection, st, res);
+		}
+		return true;
 	}
 }

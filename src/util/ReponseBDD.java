@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Reponse;
+import model.User;
 
 public class ReponseBDD {
 
@@ -92,5 +93,42 @@ public class ReponseBDD {
 		
 	}
 	
-	
+	public static boolean modifReponse(int id,String reponse) {
+		
+		Connection connection = null;
+		// statelent execute la requete
+		PreparedStatement st = null;
+		// recupere les resulat de la requete
+		ResultSet res = null;
+
+		try {
+
+			connection = util.Utilities.openConnection();
+			System.out.println("Connection etablie");
+
+			// le statement execute la requete
+			String sql = "UPDATE REPONSE SET REPONSE_TEXT = ? where id_reponse = ?";
+			st = connection.prepareStatement(sql);
+			// le res recupere les valeur de la requete
+
+			
+						
+			st.setString(1, reponse);
+			st.setInt(2, id);
+
+			
+		
+
+			// execute quesry and load result
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("Problème lors de la connexion à la BD");
+			e.printStackTrace();
+			return false;
+		} finally {
+			util.Utilities.closeConnexions(connection, st, res);
+		}
+		return true;
+	}
 }

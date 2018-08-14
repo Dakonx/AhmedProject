@@ -14,7 +14,7 @@ public class Reponse {
 		this.id = id;
 		this.text = reponse;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {

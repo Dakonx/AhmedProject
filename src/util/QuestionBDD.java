@@ -129,4 +129,46 @@ public class QuestionBDD {
 		
 		
 	}
+
+	public static boolean modifQuestion(int id,String intitule, int idReponseCorrect) {
+		
+		Connection connection = null;
+		// statelent execute la requete
+		PreparedStatement st = null;
+		// recupere les resulat de la requete
+		ResultSet res = null;
+
+		try {
+
+			connection = util.Utilities.openConnection();
+			System.out.println("Connection etablie");
+
+			// le statement execute la requete
+			String sql = "UPDATE QUESTION SET intitule = ?, id_reponse_correct = ?  where id_question = ?";
+			st = connection.prepareStatement(sql);
+			// le res recupere les valeur de la requete
+
+			
+						
+			st.setString(1, intitule);
+			st.setInt(2, idReponseCorrect);
+			st.setInt(3, id);
+
+			
+		
+
+			// execute quesry and load result
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("Problème lors de la connexion à la BD");
+			e.printStackTrace();
+			return false;
+		} finally {
+			util.Utilities.closeConnexions(connection, st, res);
+		}
+		return true;
+	}
+
+
 }

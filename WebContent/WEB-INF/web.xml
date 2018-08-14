@@ -109,7 +109,7 @@
     <servlet-name>UsersController</servlet-name>
     <url-pattern>/users</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>ModifQuizzController</servlet-name>
     <servlet-class>controller.ModifQuizzController</servlet-class>
   </servlet>
@@ -117,5 +117,12 @@
     <servlet-name>ModifQuizzController</servlet-name>
     <url-pattern>/modifquizz</url-pattern>
   </servlet-mapping>
- 
+  <servlet>
+    <servlet-name>QuizzsController</servlet-name>
+    <servlet-class>controller.QuizzsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuizzsController</servlet-name>
+    <url-pattern>/quizzs</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -27,7 +27,7 @@ public class CompetenceBDD {
 		try {
 
 			// le statement execute la requete
-			String sql = "select * from ";
+			String sql = "select * from COMPETENCE";
 			st = connection.prepareStatement(sql);
 			// le statement execute la requete
 			// le res recupere les valeur de la requete
