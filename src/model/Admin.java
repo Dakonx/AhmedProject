@@ -14,7 +14,7 @@ public class Admin extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	//
 	
 	public Admin(int id, String login, String pass, String nom, String prenom, String societe, String telephone,
 			Date dateCréation, Boolean statut) {
