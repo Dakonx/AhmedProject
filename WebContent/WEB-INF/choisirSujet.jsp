@@ -47,6 +47,7 @@
 					<input type="submit" />
 
 				</form>
+				</font>
 		</h2>
 	</div>
 </body>

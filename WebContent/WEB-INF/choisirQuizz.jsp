@@ -19,10 +19,10 @@
 	<div align="center">
 		<form method="POST" action="choisirquizz">
 			<%
-				List<Quizz> quizzs = QuizzBDD.getQuizzBySujet((String) request.getSession().getAttribute("sujet"));// récupérer tous les quizz qui ont pour sujet le sujet sélectionné
+				List<Quizz> quizzs = QuizzBDD.getQuizzBySujet((String) request.getSession().getAttribute("sujet"));// rï¿½cupï¿½rer tous les quizz qui ont pour sujet le sujet sï¿½lectionnï¿½
 				String loginUser = String.valueOf(request.getSession().getAttribute("login"));
 				User user = UserBDD.getUserByLogin(loginUser);
-				List<Parcour> parcours = ParcoursBDD.getParcoursByIDUser(user.getId());// récuperer tous les parcours déjà réalisé par ce user
+				List<Parcour> parcours = ParcoursBDD.getParcoursByIDUser(user.getId());// rï¿½cuperer tous les parcours dï¿½jï¿½ rï¿½alisï¿½ par ce user
 				List<Quizz> quizzList = new ArrayList<Quizz>();
 				for (Parcour p : parcours) {
 
@@ -52,12 +52,13 @@
 
 			<input type="submit" />
 
+
 			<%
 				}
 					if (b == quizzs.size()) {
 			%>
 
-			<h2>Vous avez effectué tout les quizz de cette matière</h2>
+			<h2>Vous avez effectue tout les quizz de cette matiere</h2>
 			<a href="/ahmedProject/choisirsujet">retour</a>
 			<%
 				}
@@ -71,5 +72,9 @@
 				}
 			%>
 		
+
+			</form>
+			</div>
+
 </body>
 </html>

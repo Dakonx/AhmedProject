@@ -41,6 +41,7 @@ public class FaireQuizzController extends HttpServlet {
 		int score = 0;//
 
 		for (int i = 0; i < quests.size(); i++) {
+			@SuppressWarnings("unused")
 			List<Reponse> reponses = ReponseBDD.getReponseByIDQuestion(quests.get(i).getId());
 
 			String nameR = "choixQ" + i;
