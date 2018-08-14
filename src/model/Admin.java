@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Admin extends User {
-
+//LOL JE SUIS UN TEST!!
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
