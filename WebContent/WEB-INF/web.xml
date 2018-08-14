@@ -101,13 +101,21 @@
     <servlet-name>ModifUserController</servlet-name>
     <url-pattern>/modifuser</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>UsersController</servlet-name>
     <servlet-class>controller.UsersController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UsersController</servlet-name>
     <url-pattern>/users</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>ModifQuizzController</servlet-name>
+    <servlet-class>controller.ModifQuizzController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifQuizzController</servlet-name>
+    <url-pattern>/modifquizz</url-pattern>
   </servlet-mapping>
  
 </web-app>

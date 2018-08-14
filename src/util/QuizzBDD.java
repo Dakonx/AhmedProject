@@ -9,8 +9,47 @@ import java.util.List;
 
 import model.Competence;
 import model.Quizz;
+import model.User;
 
 public class QuizzBDD {
+	
+	
+	public static List<Quizz> getAllQuizz(){
+		
+		List<Quizz> quizzListe = new ArrayList<>();
+		Connection connection = Utilities.openConnection();
+		if (connection == null) {
+			System.out.println("Erreur de recuperation de la connection");
+			return quizzListe;
+		}
+
+		PreparedStatement st = null;
+		ResultSet res = null;
+
+		try {
+
+			// le statement execute la requete
+			String sql = "select * from ";
+			st = connection.prepareStatement(sql);
+			// le statement execute la requete
+			// le res recupere les valeur de la requete
+			res = st.executeQuery();
+			while (res.next()) {
+
+				// System.out.println("id: " + res.getString("ID") + " email :" +
+				// res.getString("LOGIN")
+				// + " password :" + res.getString("PASSWORD"));
+				
+				quizzListe.add(new Quizz(res.getInt("id_quizz"), new Competence(res.getString("sujet")), QuestionBDD.getQuestionByIDQuizz(res.getInt("id_quizz"))));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			Utilities.closeConnexions(connection, st, res);
+		}
+		return quizzListe;
+	}
 
 	public static Quizz getQuizzByIDQuizz(int idQuizz) {
 		Connection connection = Utilities.openConnection();

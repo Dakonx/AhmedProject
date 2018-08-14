@@ -36,6 +36,7 @@
 					<input type="radio" name="sujet" value="maths"> Maths<br>
 					<input type="radio" name="sujet" value="francais"> Francais<br>
 					<input type="radio" name="sujet" value="philo"> Philosophie<br>
+					<input type="radio" name="sujet" value="histoire"> Histoire<br>
 					
 					<br>
 					<br>
